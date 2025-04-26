@@ -116,3 +116,5 @@ if [ -f ~/.ssh/agent.env ]; then
 else
   eval `ssh-agent > ~/.ssh/agent.env`
 fi
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
