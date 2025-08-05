@@ -1,8 +1,10 @@
+[env]
+TERM = "xterm-256color"
 [general]
 import = [
-#"~/.config/alacritty/themes/themes/ayu_mirage.toml"
-"~/.config/alacritty/themes/themes/carbonfox.toml"
-#"~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    #"~/.config/alacritty/themes/themes/ayu_mirage.toml"
+    #"~/.config/alacritty/themes/themes/carbonfox.toml"
+"~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 #"~/.config/alacritty/themes/themes/citylights.toml"
 #"~/.config/alacritty/themes/themes/flat_remix.toml"
 ]
@@ -10,8 +12,12 @@ live_config_reload = true
 
 [window]
 dynamic_title = true
-blur = false
-opacity = 1
+blur = true
+opacity = 0.8
+padding.x = 10
+padding.y = 10
+#option_as_alt = "Both"
+decorations = "Buttonless"
 
 [scrolling]
 history = 10_000
@@ -21,7 +27,7 @@ multiplier = 3
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font" }
-size = 15
+size = 19
 offset = { x = 0, y = 0 }
 
 [bell]

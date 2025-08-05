@@ -83,6 +83,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Other settings
 
+# GOLANG
+export GOBIN=$HOME/go/bin
+export PATH=$GOBIN:$PATH
 # config vault laboinfra cli
 export VAULT_SKIP_VERIFY=true
 export VAULT_ADDR="https://vault.core.laboinfra.net:8200"
@@ -118,3 +121,25 @@ else
 fi
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/lib"
+
+
+
+# Helper to load python env and auto setup (used for ansible dev)
+venv() {
+    if [ -d "venv" ]; then
+        echo "Using existing virtual environment."
+    else
+        echo "Creating a new virtual environment."
+        python3 -m venv venv
+    fi
+
+    source venv/bin/activate
+
+    if [ -f "requirements.txt" ]; then
+        echo "Installing requirements from requirements.txt."
+        pip install -r requirements.txt
+    else
+        echo "No requirements.txt found, skipping installation."
+    fi
+}
